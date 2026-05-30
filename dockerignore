@@ -1,0 +1,49 @@
+# neutronics_vi/.dockerignore
+# Files excluded from the Docker build context.
+# The build context is the neutronics_vi/ folder itself.
+
+# Git internals (never needed inside image)
+.git
+.gitignore
+.gitattributes
+
+# CI/CD config
+.github/
+
+# Local environment / secrets
+.env
+*.env
+.env.*
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Test outputs
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS artefacts
+.DS_Store
+Thumbs.db
+
+# Large local data — mount these as volumes, don't bake into image
+nuclear_data/
+workspace/
+results/
+
+# Editor configs
+.vscode/
+.idea/
+*.swp
+*.swo
