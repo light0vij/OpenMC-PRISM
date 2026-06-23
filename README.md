@@ -162,8 +162,8 @@ Current assemblies use only two enrichment levels. A natural extension is to add
 
 Simulating neutron flux over an 18–24 month fuel cycle for every candidate layout during optimization would be computationally prohibitive. The planned workflow separates this into two phases:
 
-**Step 1 — BOC Optimization.** The GA, BO, or Hybrid Memetic optimizer runs as-is, evaluating thousands of layouts at Beginning of Cycle (Day 0). The optimizer's only job is to identify arrangements that best satisfy the k∞ and PPF objectives with fresh fuel.
+**Step 1 — BOC Optimization.** The GA, BO, or Hybrid Memetic optimizer runs as-is, evaluating layouts at Beginning of Cycle (Day 0). The optimizer's identify arrangements that best satisfy the k∞ and PPF objectives with fresh fuel.
 
-**Step 2 — Depletion Verification.** The top 3–5 layouts from Step 1 are passed to a dedicated `deplete.py` script that runs a full OpenMC depletion calculation to verify that gadolinium burns away correctly and that k_eff stays above 1.0 for the entire cycle.
+**Step 2 — Depletion Verification.** The top 3–5 layouts from Step 1 are passed to a dedicated script that runs a full OpenMC depletion calculation to verify that gadolinium burns away correctly and that k_eff stays above 1.0 for the entire cycle.
 
 This two-step strategy — *optimize the BOC state, verify with depletion* — keeps the AI search tractable while ensuring the winning designs are physically viable over their full operational lifetime.
