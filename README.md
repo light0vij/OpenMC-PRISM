@@ -134,11 +134,7 @@ Navigate to `http://localhost:8888` in your browser and open any notebook under 
 
 ---
 
-## License
 
-MIT — see `LICENSE` if present, or use freely for research and educational purposes.
-
----
 
 ## References
 
