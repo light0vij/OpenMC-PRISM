@@ -26,7 +26,7 @@ The BO maximizes a sign-flipped equivalent score:
 
 $$\text{Score}_{\text{BO}} = -\alpha_k \left| k_{\text{target}} - k_{\infty} \right| - \alpha_{\text{PPF}} \max\left(0,\ \text{PPF} - \text{PPF}_{\text{target}}\right)^2$$
 
-Both are evaluated at the same operating targets: **k∞ target = 1.25**, **PPF target = 1.41**. The goal is therefore not to maximize k∞ but to hit the reactivity target with the flattest possible flux profile.
+Both are evaluated at the same operating targets: **k∞ target = 1.25**, **PPF target = 1.35**. The goal is therefore not to maximize k∞ but to hit the reactivity target with the flattest possible flux profile.
 
 ### Physics heuristics
 
