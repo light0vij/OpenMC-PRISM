@@ -125,7 +125,7 @@ Replace `/YOUR_FOLDER_PATH` with an absolute path to a local folder where the nu
 
 The image is kept intentionally lean (~3 GB) through two design choices:
 
-- **OpenMC is installed via [shimwell's pre-built wheels](https://github.com/shimwell/openmc_wheels)** rather than compiled from source, saving around 30 minutes of build time.
+- **OpenMC is installed via [shimwell's pre-built wheels](https://github.com/shimwell/wheels)** rather than compiled from source, saving around 30 minutes of build time.
 - **Nuclear data is not baked into the image.** The ENDF/B-VIII.0 cross-section library (~2 GB) is downloaded separately at container startup via `executedownload.sh` and saved to the mounted folder. On the first run this download happens automatically; on every subsequent run the script detects that the data is already present and skips it — so startup is near-instant after the first time. Bundling the data would push the image to ~11 GB.
 
 **3. Open the notebooks**
