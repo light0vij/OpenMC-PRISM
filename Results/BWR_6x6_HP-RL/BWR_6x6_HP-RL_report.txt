@@ -1,0 +1,47 @@
+OpenMC-PRISM — Design Report (Reinforcement Learning)
+======================================================================
+
+RLConfig — BWR_6x6_HP-RL
+  Assembly           : 6x6 = 36 pins
+  Episode length     : 21 decisions/episode (1/2-diagonal symmetry)
+  ENR_LOW            : 1.87 wt%
+  ENR_HIGH           : 2.53 wt%
+  n_high_rods        : 23 / 36  (avg 2.2917 wt%)
+  k-inf target       : 1.25  (alpha_k = 5)
+  PPF target         : 1.35  (alpha_ppf = 10)
+  Corner masking     : True  (hard mask, applied in action_masks())
+  Adjacency penalty  : True  (weight=2.0)
+  Policy net_arch    : (64, 64)
+  Learning rate      : 0.0003
+  Rollout / batch    : n_steps=128  batch_size=64  n_epochs=10
+  Gamma / GAE-lambda : 0.99 / 0.95
+  Total timesteps    : 6,300  (~300 OpenMC evaluations)
+  Random seed        : 7
+  OpenMC particles   : 5000  (25 inactive + 20 active)
+  Smoke particles    : 500  (10 inactive + 20 active)
+  Results dir        : ../Results/BWR_6x6_HP-RL
+
+----------------------------------------------------------------------
+OpenMC model parameters
+----------------------------------------------------------------------
+  n_rods_side                 : 6
+  pin_pitch                   : 1.62
+  assembly_side               : 9.72
+  fuel_radius                 : 0.53
+  clad_ir                     : 0.54
+  clad_or                     : 0.61
+  t_fuel                      : 900.0
+  t_mod                       : 560.0
+  rho_uo2                     : 10.4
+  rho_water                   : 0.74
+  rho_clad                    : 6.56
+
+----------------------------------------------------------------------
+Best design found
+----------------------------------------------------------------------
+  k∞              : 1.26588
+  |∆k∞|           : 0.01588
+  PPF                : 1.1150
+  Fitness            : 40.079416
+  Total OpenMC calls : 304
+  Chromosome         : [0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0]
