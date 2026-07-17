@@ -1,4 +1,4 @@
-# =============================================================================
+# ===========================================================================
 # .github/workflows/docker-publish.yml
 #
 # Builds Docker image from repo root and pushes to GitHub Container Registry.
@@ -6,15 +6,10 @@
 # RESULT IMAGE:
 #   ghcr.io/light0vij/openmc-prism:latest
 #
-# TRIGGERS:
-#   - Push to main touching Dockerfile, requirements.txt, Notebooks, or this file
-#   - Manual run from Actions tab
-#   - Weekly rebuild every Sunday 02:00 UTC
-#
 # REQUIRED (one-time setup):
 #   Repo → Settings → Actions → General →
 #   Workflow permissions → "Read and write permissions" 
-# =============================================================================
+# ===========================================================================
 
 name: Build and publish openmc-prism Docker image
 
@@ -37,9 +32,6 @@ on:
   # Manual trigger from Actions tab — no push needed
   workflow_dispatch:
 
-  # Weekly rebuild — keeps OS patches and Python packages fresh
-  schedule:
-    - cron: "0 2 * * 0"
 
 # ── Permissions ───────────────────────────────────────────────────────────────
 permissions:
